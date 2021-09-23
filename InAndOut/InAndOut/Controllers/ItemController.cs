@@ -27,6 +27,7 @@ namespace InAndOut.Controllers
         //Get-Create
         public IActionResult Create()
         {
+            Console.WriteLine("elo1");
             return View();
         }
         //POST-Create
@@ -34,6 +35,7 @@ namespace InAndOut.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Item obj)
         {
+            Console.WriteLine("elo2");
             _db.Items.Add(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
